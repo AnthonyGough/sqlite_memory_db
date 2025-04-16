@@ -18,7 +18,7 @@ public class ContactManagerTest {
 
     @BeforeEach
     public void setUp() {
-        contactManager = new ContactManager(new SqliteContactDAO()      );
+        contactManager = new ContactManager(new MockContactDAO()      );
     }
 
     @Test
