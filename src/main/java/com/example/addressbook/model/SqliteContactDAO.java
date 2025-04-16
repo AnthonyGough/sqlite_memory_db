@@ -6,7 +6,7 @@ import java.util.List;
 
 public class SqliteContactDAO implements IContactDAO {
     private Connection connection;
-
+    private static final String DROP_TABLE = "DROP TABLE if exists contacts;";
     public SqliteContactDAO() {
         connection = SqliteConnection.getInstance();
         createTable();
@@ -15,7 +15,9 @@ public class SqliteContactDAO implements IContactDAO {
     private void createTable() {
         // Create table if not exists
         try {
+
             Statement statement = connection.createStatement();
+            statement.execute(DROP_TABLE);
             String query = "CREATE TABLE IF NOT EXISTS contacts ("
                     + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + "firstName VARCHAR NOT NULL,"
