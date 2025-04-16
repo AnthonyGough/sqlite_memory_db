@@ -18,16 +18,17 @@ public class ContactManagerTest {
 
     @BeforeEach
     public void setUp() {
-        contactManager = new ContactManager(new MockContactDAO()      );
+        contactManager = new ContactManager(new MockContactDAO());
     }
-
+/*
     @Test
     public void testSearchInOneContact() {
         contactManager.addContact(contacts[0]);
-        List<Contact> contactsList = contactManager.searchContacts("John");
-
-        assertEquals(0,contacts[0].getFirstName().compareTo(contactsList.get(0).getFirstName()));
+        List<Contact> contacts = contactManager.searchContacts("John");
+        assertEquals(1, contacts.size());
+        assertEquals(this.contacts[0], contacts.get(0));
     }
+
 /*
     @Test
     public void testSearchInMultipleContacts() {

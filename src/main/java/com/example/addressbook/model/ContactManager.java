@@ -3,8 +3,8 @@ package com.example.addressbook.model;
 import java.util.List;
 
 public class ContactManager {
-    private SqliteContactDAO contactDAO;
-    public ContactManager(SqliteContactDAO contactDAO) {
+    private IContactDAO contactDAO;
+    public ContactManager(IContactDAO contactDAO) {
         this.contactDAO = contactDAO;
     }
 
